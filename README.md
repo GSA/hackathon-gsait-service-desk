@@ -1,6 +1,6 @@
-# CX Hackathon - ServiceNow
+# CX Hackathon - GSA IT Service Desk
 
-This repository accepts submissions for the ServiceNow app during the CX Hackathon.
+This repository accepts submissions for the GSA IT Service Desk app during the CX Hackathon.
 
 ## Instructions
 
