@@ -1,0 +1,103 @@
+<form name="Form" #f="ngForm" (ngSubmit)="onSubmit(f);">
+
+    <div class="row">
+ 
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" aria-describedby="firstNameHelp" placeholder="Enter First Name">
+        <small id="firstNameHelp" class="form-text text-muted">Please enter First Name</small>
+      </div>
+      <div style="margin: 5px; background-color: red;"></div>
+      <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" name="lastName" aria-describedby="lastNameHelp" placeholder="Enter Last Name">
+          <small id="lastNameHelp" class="form-text text-muted">Please Last Name</small>
+        </div>
+
+    </div>
+    <div class="row">
+   
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" class="form-control" name="phoneNumber" aria-describedby="phoneNumberHelp" placeholder="Enter Phone Number">
+            <small id="phoneNumberHelp" class="form-text text-muted">Please Phone Number</small>
+          </div>
+          <div style="margin: 5px; background-color: red;"></div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter Email">
+              <small id="emailHelp" class="form-text text-muted">Please Email</small>
+            </div>
+    </div>
+    <div class="row">
+         
+            <div class="form-group">
+                <label for="comments">Office Code</label>
+                <div ng-non-bindable="" class="hidden"><input type="hidden" id="sys_original.officeCode" name="sys_original.officeCode"
+                    value="3"></div><select aria-required="false" aria-labelledby="label.officeCode" ng-non-bindable="true" name="officeCode"
+                  id="officeCode" class="form-control" aria-readonly="false">
+                  <option value="I" selected="SELECTED">I</option>
+                  <option value="Q1">Q1</option>
+                  <option value="Q2">Q2</option>
+                  <option value="QN">QN</option>
+                  <option value="QX">QX</option>
+                  <option value="QE">QE</option>
+                  <option value="text">T</option>
+                  <option value="M">M</option>
+                  <option value="MV">MV</option> 
+                </select>
+              </div> 
+              <div style="margin: 5px; background-color: red;"></div>
+
+    <div class="form-group">
+      <label for="short_description">Description of Issue</label>
+      <input type="text" class="form-control" name="short_description" aria-describedby="emailHelp" placeholder="Enter decription" ngModel="{{short_description.value}}">
+      <small id="emailHelp" class="form-text text-muted">Please decribe the problem</small>
+    </div>
+          </div>
+          <div class="row">
+  
+    <div class="form-group">
+      <div ng-non-bindable="" class="hidden">
+        <label for="urgency">Urgency</label>
+        <input type="hidden" id="sys_original.urgency" name="sys_original.urgency" value="1"></div>
+      <select aria-required="false" aria-labelledby="label.urgency" ng-non-bindable="true" name="urgency" id="urgency"
+        ngModel="{{urgency.value == null && '1' || urgency.value}}" class="form-control" aria-readonly="false">
+        <option value="1" selected="SELECTED">1 - High</option>
+        <option value="2">2 - Medium</option>
+        <option value="3">3 - Low</option>
+      </select>
+    </div>
+    <div style="margin: 5px; background-color: red;"></div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <div ng-non-bindable="" class="hidden"><input type="hidden" id="sys_original.state" name="sys_original.state"
+            value="3"></div><select aria-required="false" aria-labelledby="label.state" ng-non-bindable="true" name="state"
+          id="state" ngModel="{{state.value == null && '1' || state.value}}" class="form-control" aria-readonly="false">
+          <option value="1">New</option>
+          <option value="2">In Progress</option>
+          <option value="3" selected="SELECTED">On Hold</option>
+          <option value="6">Resolved</option>
+          <option value="7">Closed</option>
+          <option value="8">Canceled</option>
+        </select>
+      </div> 
+
+    </div>
+    <div class="row">
+
+      <div class="form-group">
+        <label for="caller_id">Caller</label>
+        <div ng-non-bindable="" class="hidden"><input type="hidden" id="sys_original.caller_id" name="sys_original.caller_id"
+            value="3"></div><select aria-required="false" aria-labelledby="label.caller_id" ng-non-bindable="true" name="caller_id"
+          id="caller_id" ngModel="{{caller_id.value == null && '02826bf03710200044e0bfc8bcbe5d3f' || caller_id.value}}" class="form-control" aria-readonly="false">
+          <option value="02826bf03710200044e0bfc8bcbe5d3f">Lucius Bagnoli</option>
+          <option value="02826bf03710200044e0bfc8bcbe5d55">Jimmie Barninger</option>
+          <option value="02826bf03710200044e0bfc8bcbe5d5e" selected="SELECTED">Melinda Carleton</option>
+          <option value="02826bf03710200044e0bfc8bcbe5d64">Jewel Agresta</option>
+        </select>
+      </div> 
+      </div>
+
+      <button type="submit" class="btn btn-primary">Create Incident</button>
+  </form>
