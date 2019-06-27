@@ -1,0 +1,31 @@
+
+<p style="text-align:right;border:none;">
+<button class="btn btn-primary" (click)="exportAsXLSX()"> 
+    Export Incidents
+    <!-- <img style="border:none;" src="../../assets/xlsx.png" height="30" alt="Export Incidents">  -->
+</button> 
+</p>
+<h3>Incidents</h3>
+        <table class="table">
+                <tr>
+                    <th>Number</th>
+                    <th>Status</th>
+                    <th>Urgency</th>
+                    <th>Caller</th>
+                    <th>Opened</th>
+                    <th>Description</th>
+                   
+                    
+                </tr>
+                <tbody *ngFor="let entry of incidents.result">
+                    <tr>
+                        <td> <a style="cursor: pointer; color: blue" (click)="updateData(entry)">{{entry.number}}</a></td>
+                        <td> {{entry.state == 1 && 'New' || entry.state == 2 && 'In Progress' || entry.state == 3 && 'On Hold' || entry.state == 4 && 'Resolved' || entry.state == 5 && 'Closed' || 'Cancelled'}}</td>
+                        <td> {{entry.urgency == 1 && 'High' || entry.urgency == 2 && 'Medium' || 'Low'}}</td>
+                        <td> {{entry.caller_id.value == '02826bf03710200044e0bfc8bcbe5d3f' && 'Lucius Bagnoli' || entry.caller_id.value == '02826bf03710200044e0bfc8bcbe5d55' && 'Jimmie Barninger' || entry.caller_id.value == '02826bf03710200044e0bfc8bcbe5d5e' && 'Melinda Carleton' || entry.caller_id.value == '02826bf03710200044e0bfc8bcbe5d64' && 'Jewel Agresta' || 'Harsha Chennuru'}}</td>
+                        <td>{{entry.opened_at}}</td>
+                        <td> {{entry.short_description}}</td>
+                    </tr>                   
+            
+                </tbody>
+            </table>
